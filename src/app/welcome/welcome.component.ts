@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { I18n } from 'aws-amplify';
+import { ThemerService } from '../services/themer.service';
 
 @Component({
   selector: 'app-welcome',
@@ -11,7 +12,7 @@ export class WelcomeComponent implements OnInit {
   welcome = I18n.get('Welcome');
   lang = 'en';
 
-  constructor(private cdr: ChangeDetectorRef) { }
+  constructor(private cdr: ChangeDetectorRef, private themerService: ThemerService) { }
 
   ngOnInit() {
     this.setLanguage(this.lang);
@@ -20,8 +21,10 @@ export class WelcomeComponent implements OnInit {
   toggleLanguage() {
     if (this.lang === 'en') {
       this.setLanguage('esp');
+      this.themerService.switchTheme('light');
     } else {
       this.setLanguage('en');
+      this.themerService.switchTheme('dark');
     }
   }
 
