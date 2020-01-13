@@ -12,7 +12,7 @@ export class WelcomeComponent implements OnInit {
   welcome = I18n.get('Welcome');
   lang = 'en';
 
-  constructor(private cdr: ChangeDetectorRef, private themerService: ThemerService) { }
+  constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.setLanguage(this.lang);
@@ -21,10 +21,8 @@ export class WelcomeComponent implements OnInit {
   toggleLanguage() {
     if (this.lang === 'en') {
       this.setLanguage('esp');
-      this.themerService.switchTheme('light');
     } else {
       this.setLanguage('en');
-      this.themerService.switchTheme('dark');
     }
   }
 
