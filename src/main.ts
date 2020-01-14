@@ -4,11 +4,11 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-// import Amplify from 'aws-amplify';
-// import awsconfig from './aws-exports';
+import Amplify from 'aws-amplify';
+import awsconfig from './aws-exports';
 import { I18n } from 'aws-amplify';
 
-// Amplify.configure(awsconfig);
+Amplify.configure(awsconfig);
 
 I18n.setLanguage('en');
 const dict = {
