@@ -8,6 +8,9 @@ import Amplify from 'aws-amplify';
 import awsconfig from './aws-exports';
 import { I18n } from 'aws-amplify';
 
+awsconfig.oauth.redirectSignIn = environment.auth.redirectUri;
+awsconfig.oauth.redirectSignOut = environment.auth.signoutUri;
+
 Amplify.configure(awsconfig);
 
 I18n.setLanguage('en');

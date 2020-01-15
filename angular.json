@@ -15,7 +15,7 @@
       "prefix": "btsd",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/betaside",
             "index": "src/index.html",
@@ -31,7 +31,10 @@
               "src/themes/default.scss",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "custom-webpack-config.js"
+            }
           },
           "configurations": {
             "production": {
