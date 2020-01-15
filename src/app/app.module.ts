@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { HeaderComponent } from './header/header.component';
 import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
