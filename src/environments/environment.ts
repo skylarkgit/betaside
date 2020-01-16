@@ -5,10 +5,16 @@
 export const environment = {
   production: false,
   auth: {
-    uri: '<>',
-    redirectUri: 'http://localhost:4200/signin/',
-    clientId: '<>',
-    signoutUri: 'http://localhost:4200/signout/'
+    uri: '<fill here>',
+    redirectUri: '<fill here>',
+    clientId: '<fill here>',
+    signoutUri: '<fill here>'
+  },
+  aws: {
+    region: '<fill here>',
+    cognitoRegion: '<fill here>',
+    cognitoIdentityPoolId: '<fill here>',
+    userPoolsId: '<fill here>'
   }
 };
 
@@ -19,4 +25,4 @@ export const environment = {
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
  */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+// import '<fill here>';  // Included with Angular CLI.

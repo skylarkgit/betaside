@@ -5,13 +5,11 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
 import Amplify from 'aws-amplify';
-import awsconfig from './aws-exports';
+import awsconfig from './aws-export';
 import { I18n } from 'aws-amplify';
+import awsConfig from './aws-export';
 
-awsconfig.oauth.redirectSignIn = environment.auth.redirectUri;
-awsconfig.oauth.redirectSignOut = environment.auth.signoutUri;
-
-Amplify.configure(awsconfig);
+Amplify.configure(awsConfig);
 
 I18n.setLanguage('en');
 const dict = {

@@ -14,7 +14,7 @@ import { AmplifyService } from 'aws-amplify-angular';
 export class WelcomeComponent implements OnInit {
   welcome = I18n.get('Welcome');
   lang = 'en';
-  siginUri = `${environment.auth.uri}login?response_type=code&client_id=${environment.auth.clientId}&redirect_uri=${environment.auth.redirectUri}`;
+  siginUri = `https://${environment.auth.uri}/login?response_type=code&client_id=${environment.auth.clientId}&redirect_uri=${environment.auth.redirectUri}`;
   email = null;
 
   constructor(private cdr: ChangeDetectorRef, private amp: AmplifyService) { }
