@@ -7,8 +7,8 @@
         "config": {
             "SourceDir": "src",
             "DistributionDir": "dist/betaside",
-            "BuildCommand": "npm run build",
-            "StartCommand": "ng serve"
+            "BuildCommand": "npm run postinstall",
+            "StartCommand": "npm run start"
         }
     },
     "providers": [
