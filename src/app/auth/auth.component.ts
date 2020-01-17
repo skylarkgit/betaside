@@ -15,7 +15,7 @@ export class AuthComponent implements OnInit {
   ngOnInit() {
     // this.route.params.subscribe(param => console.log(param));
     // this.route.``
-    this.route.navigateByUrl('/');
+    this.route.navigate(['/']);
   }
 
 }
