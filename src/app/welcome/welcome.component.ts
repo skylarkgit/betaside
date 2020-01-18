@@ -44,4 +44,8 @@ export class WelcomeComponent implements OnInit {
     this.welcome = I18n.get('Welcome');
     this.cdr.detectChanges();
   }
+
+  logout() {
+    Auth.signOut().then(() => location.reload());
+  }
 }

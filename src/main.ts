@@ -5,7 +5,6 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
 import Amplify from 'aws-amplify';
-import awsconfig from './aws-export';
 import { I18n } from 'aws-amplify';
 import awsConfig from './aws-export';
 
