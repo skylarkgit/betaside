@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
-import Amplify, { Auth } from 'aws-amplify';
-import { AuthDispatcher } from '../store/services';
+import { Store } from '@ngrx/store';
+import { verifyIdentity } from '../identity/store/actions/signin.actions';
+import { IdentityState } from '../identity/types';
+import { IdentityDispatcher } from '../identity/store/services';
 
 @Component({
   selector: 'btsd-auth',
@@ -11,13 +12,14 @@ import { AuthDispatcher } from '../store/services';
 })
 export class AuthComponent implements OnInit {
 
-  constructor(private route: Router, private authDispatcher: AuthDispatcher) { }
+  constructor(private route: Router, private identityDispatcher: IdentityDispatcher) { }
 
   ngOnInit() {
     // this.route.params.subscribe(param => console.log(param));
     // this.route.``
-    this.authDispatcher.loggedIn('abhay');
-    this.route.navigate(['/']);
+    // this.store.dispatch(verifyIdentity());
+    this.identityDispatcher.verifyLogin();
+    this.route.navigate(['']);
   }
 
 }

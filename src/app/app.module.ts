@@ -8,6 +8,11 @@ import { HeaderComponent } from './header/header.component';
 import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
 import { AuthComponent } from './auth/auth.component';
 import { AppStoreModule } from './store/app-store.module';
+import { IdentityModule } from './identity/identity.module';
+import { environment } from 'src/environments/environment';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,11 @@ import { AppStoreModule } from './store/app-store.module';
     BrowserModule,
     AppRoutingModule,
     AmplifyAngularModule,
-    AppStoreModule
+    AppStoreModule,
+    IdentityModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
+    !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [AmplifyService],
   bootstrap: [AppComponent]

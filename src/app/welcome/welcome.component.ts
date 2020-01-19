@@ -9,7 +9,7 @@ import { AmplifyService } from 'aws-amplify-angular';
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WelcomeComponent implements OnInit {
   welcome = I18n.get('Welcome');
