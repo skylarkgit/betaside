@@ -1,6 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ThemerService } from '../services/themer.service';
-import { AmplifyService } from 'aws-amplify-angular';
 
 @Component({
   selector: 'btsd-header',
@@ -11,7 +10,7 @@ export class HeaderComponent implements OnInit {
 
   theme: 'light' | 'dark' = 'light';
 
-  constructor(private cdr: ChangeDetectorRef, private themerService: ThemerService, private amplify: AmplifyService) { }
+  constructor(private cdr: ChangeDetectorRef, private themerService: ThemerService) { }
 
   ngOnInit() {
     this.setTheme(this.theme);

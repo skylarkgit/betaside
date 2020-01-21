@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { HeaderComponent } from './header/header.component';
-import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
 import { AuthComponent } from './auth/auth.component';
 import { AppStoreModule } from './store/app-store.module';
 
@@ -19,10 +18,9 @@ import { AppStoreModule } from './store/app-store.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AmplifyAngularModule,
     AppStoreModule
   ],
-  providers: [AmplifyService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
