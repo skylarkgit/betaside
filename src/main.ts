@@ -4,13 +4,6 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-import Amplify from 'aws-amplify';
-import { I18n } from 'aws-amplify';
-import awsConfig from './aws-export';
-
-Amplify.configure(awsConfig);
-
-I18n.setLanguage('en');
 const dict = {
   en: {
     Welcome: 'Welcome'
@@ -20,8 +13,6 @@ const dict = {
   }
 };
 
-I18n.putVocabularies(dict);
-I18n.setLanguage('esp');
 if (environment.production) {
   enableProdMode();
 }
