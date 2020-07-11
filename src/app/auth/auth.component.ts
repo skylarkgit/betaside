@@ -10,13 +10,12 @@ import { AuthDispatcher } from '../store/services';
 })
 export class AuthComponent implements OnInit {
 
-  constructor(private route: Router, private authDispatcher: AuthDispatcher) { }
+  constructor(private route: ActivatedRoute, private router: Router, private authDispatcher: AuthDispatcher) { }
 
   ngOnInit() {
-    // this.route.params.subscribe(param => console.log(param));
-    // this.route.``
-    this.authDispatcher.loggedIn('abhay');
-    this.route.navigate(['/']);
+    console.log('params', this.route.snapshot.queryParams.access_token);
+    this.authDispatcher.loggedIn('abhay', this.route.snapshot.queryParams.access_token);
+    this.router.navigate(['/']);
   }
 
 }

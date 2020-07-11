@@ -7,6 +7,9 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { HeaderComponent } from './header/header.component';
 import { AuthComponent } from './auth/auth.component';
 import { AppStoreModule } from './store/app-store.module';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { AppStoreModule } from './store/app-store.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AppStoreModule
+    AppStoreModule,
+    StoreDevtoolsModule.instrument(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

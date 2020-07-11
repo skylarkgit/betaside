@@ -1,6 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { ThemerService } from '../services/themer.service';
 import { environment } from 'src/environments/environment';
+import { UserSelector } from '../store/services/user.selector';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-welcome',
@@ -12,20 +14,21 @@ export class WelcomeComponent implements OnInit {
   // welcome = I18n.get('Welcome');
   welcome = 'Welcome';
   lang = 'en';
-  siginUri = `https://${environment.auth.uri}/login?response_type=code&client_id=${environment.auth.clientId}&redirect_uri=${environment.auth.redirectUri}`;
-  email = null;
+  siginUri = environment.auth.uri;
+  user = null;
 
-  constructor(private cdr: ChangeDetectorRef) { }
+  constructor(private cdr: ChangeDetectorRef, private userSelector: UserSelector, private authService: AuthService) { }
 
   ngOnInit() {
     this.setLanguage(this.lang);
-    // this.amp.auth()
-    // Auth.currentUserInfo().then(val => console.log(val));
-    // Auth.currentAuthenticatedUser().then(val => {
-    //   this.email = val.attributes.email;
-    //   this.cdr.detectChanges();
-    // });
-    // Auth.currentSession().then(val => console.dir(val.getIdToken()));
+    this.userSelector.user$.subscribe(d => console.log(d, 'user'));
+    this.authService.getUserDetails().subscribe(u => {
+      this.user = {
+        username: u.username
+      };
+      this.cdr.detectChanges();
+      console.log(this.user, 'user');
+    });
   }
 
   toggleLanguage() {

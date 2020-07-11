@@ -1,3 +1,3 @@
 import { createAction, props } from '@ngrx/store';
 
-export const loggedIn = createAction('[Auth] LoggedIn', props<{username: string}>());
+export const loggedInAction = createAction('[Auth] LoggedIn', props<{username: string, accessToken: string}>());

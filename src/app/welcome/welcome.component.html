@@ -8,8 +8,8 @@
     <small class="light-text">{{welcome}}</small>
   </div>
   <div>
-    <div *ngIf="email">{{email}}</div>
-    <button class="btn-primary" (click)="logout()" *ngIf="email">Logout</button>
-    <!-- <a *ngIf="!email" href="{{siginUri}}"><button type="button" class="btn btn-primary">Sign In</button></a> -->
+    <div *ngIf="user">{{user.username}}</div>
+    <!-- <button class="btn-primary" (click)="logout()" *ngIf="email">Logout</button> -->
+    <a *ngIf="!user" href="{{siginUri}}"><button type="button" class="btn btn-primary">Sign In</button></a>
   </div>
 </div>

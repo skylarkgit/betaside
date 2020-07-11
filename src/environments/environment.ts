@@ -5,10 +5,8 @@
 export const environment = {
   production: false,
   auth: {
-    uri: '<fill here>',
-    redirectUri: '<fill here>',
-    clientId: '<fill here>',
-    signoutUri: '<fill here>'
+    uri: 'http://localhost:3000/auth/google',
+    redirectUri: 'http://localhost:3000/signin'
   },
   aws: {
     region: '<fill here>',
